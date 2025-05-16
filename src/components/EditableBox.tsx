@@ -18,9 +18,10 @@ interface EditableBoxProps {
 
 export default function EditableBox({ styles }: EditableBoxProps) {
   const boxShadow = styles.shadows
+    .filter((s) => s.visible !== false)
     .map(
       (s) =>
-        `${s.offsetX}px ${s.offsetY}px ${s.blur}px ${s.spread}px ${s.color}`
+        `${s.inset ? "inset " : ""}${s.offsetX}px ${s.offsetY}px ${s.blur}px ${s.spread}px ${s.color}`
     )
     .join(", ")
 

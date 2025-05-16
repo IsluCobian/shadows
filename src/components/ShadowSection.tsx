@@ -34,7 +34,7 @@ export default function ShadowSection({
   }
   return (
     <div className="flex w-full flex-col gap-4">
-      <div className="flex items-center justify-between">
+      <div className="bg-card sticky top-0 z-10 flex items-center justify-between py-4">
         <h3 className="text-lg font-bold">Shadows</h3>
         <button
           onClick={addShadow}
@@ -49,6 +49,7 @@ export default function ShadowSection({
             <ShadowControl
               value={shadow}
               onChange={(v) => updateShadow(i, v)}
+              onDelete={() => removeShadow(i)}
             />
           </div>
         ))}

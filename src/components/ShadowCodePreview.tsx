@@ -7,14 +7,16 @@ type Props = {
 }
 
 export default function ShadowCodePreview({ shadows }: Props) {
-  const css = shadows
+  const filteredShadows = shadows.filter((s) => s.visible !== false)
+
+  const css = filteredShadows
     .map(
       (s) =>
-        `${s.offsetX}px ${s.offsetY}px ${s.blur}px ${s.spread}px ${s.color}`
+        `${s.inset ? "inset " : ""}${s.offsetX}px ${s.offsetY}px ${s.blur}px ${s.spread}px ${s.color}`
     )
     .join(", ")
 
-  const tailwind = shadows
+  const tailwind = filteredShadows
     .map(
       (s, i) =>
         `${s.offsetX}px_${s.offsetY}px_${s.blur}px_${s.spread}px_${s.color.replace(
@@ -33,8 +35,8 @@ export default function ShadowCodePreview({ shadows }: Props) {
       <h3 className="mb-2 text-sm font-medium">Generated Code</h3>
       <div className="mb-4">
         <label className="text-muted-foreground mb-1 text-xs">CSS</label>
-        <div className="bg-background relative flex flex-wrap rounded border p-2 font-mono text-xs">
-          <code>box-shadow: {css};</code>
+        <div className="bg-background relative flex max-h-24 flex-wrap overflow-y-auto rounded border p-2 font-mono text-xs">
+          <code className="">box-shadow: {css};</code>
           <button
             onClick={() => copy(`box-shadow: ${css};`)}
             className="text-muted-foreground hover:text-foreground absolute top-2 right-2"

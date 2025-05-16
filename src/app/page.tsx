@@ -33,7 +33,7 @@ export default function Home() {
         <div className="flex min-h-screen flex-1 items-center justify-center md:min-h-auto">
           <EditableBox styles={{ ...boxStyles, shadows }} />
         </div>
-        <div className="bg-card flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:inset-y-0 md:left-0 md:mt-14 md:w-70 md:border-r md:p-3 md:px-4">
+        <div className="bg-card scrollbar-gutter relative flex w-full flex-col items-start justify-start space-y-5 overflow-y-auto p-6 md:absolute md:inset-y-0 md:left-0 md:mt-14 md:w-64 md:border-r md:p-3 md:px-4 md:pt-0 lg:w-80">
           <ShadowSection shadows={shadows} onChange={setShadows} />
         </div>
         <div className="bg-card flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:inset-y-0 md:right-0 md:mt-14 md:w-64 md:border-l md:p-3 md:px-4">

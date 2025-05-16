@@ -56,6 +56,7 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
       <div className="relative">
         <Scan className="text-muted-foreground/70 absolute top-1/2 left-2 size-4 -translate-y-1/2" />
         <DraggableInput
+          max={1000}
           value={sharedValue || 0}
           onChange={updateAll}
           className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 pl-8 text-base"
@@ -83,6 +84,7 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
                   )}
                 />
                 <DraggableInput
+                  max={1000}
                   value={value[corner]}
                   onChange={(newVal) =>
                     onChange({ ...value, [corner]: newVal })

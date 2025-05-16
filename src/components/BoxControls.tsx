@@ -32,7 +32,7 @@ interface BoxControlsProps {
 }
 export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
   return (
-    <div className="flex w-64 flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <h3 className="text-lg font-bold">Box Properties</h3>
       <BorderRadiusControl
         value={styles.borderRadius}

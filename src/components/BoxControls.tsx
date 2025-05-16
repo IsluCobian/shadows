@@ -22,6 +22,7 @@ interface BoxControlsProps {
         bottomRight: number
         bottomLeft: number
       }
+      boxShadow: string
       width: number
       height: number
       backgroundColor: string

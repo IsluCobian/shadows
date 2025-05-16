@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react"
 import DraggableInput from "./DraggableInput"
+import { Scan } from "lucide-react"
+import { Icons } from "./Icons"
+import { cn } from "@/lib/utils"
 
 type Radius = {
   topLeft: number
@@ -11,6 +14,13 @@ type Radius = {
 type Props = {
   value: Radius
   onChange: (newRadius: Radius) => void
+}
+
+const IconRotation = {
+  topLeft: "",
+  topRight: "rotate-90",
+  bottomRight: "rotate-180",
+  bottomLeft: "rotate-270",
 }
 
 export default function BorderRadiusControl({ value, onChange }: Props) {
@@ -37,18 +47,25 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
       <div className="flex items-center justify-between">
         <label className="text-sm font-medium">Border Radius</label>
         <button
-          className="text-xs text-blue-500 underline dark:text-blue-400"
+          className="text-xs text-blue-400 underline"
           onClick={() => setExpanded(!expanded)}
         >
           {expanded ? "Collapse" : "Edit Corners"}
         </button>
       </div>
-
-      <DraggableInput
-        value={sharedValue || 0}
-        onChange={updateAll}
-        className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 text-base"
-      />
+      <div className="relative">
+        <Scan className="text-muted-foreground/70 absolute top-1/2 left-2 size-4 -translate-y-1/2" />
+        <DraggableInput
+          value={sharedValue || 0}
+          onChange={updateAll}
+          className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 pl-8 text-base"
+        />
+        {!allEqual && (
+          <span className="bg-card text-muted-foreground absolute top-1/2 left-8 -translate-y-1/2">
+            Mixed
+          </span>
+        )}
+      </div>
       <div
         className="grid grid-rows-[0fr] overflow-hidden transition-all duration-400 ease-in-out data-open:grid-rows-[1fr]"
         data-open={expanded ? "" : undefined}
@@ -56,16 +73,21 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
         <div className="min-h-0">
           <div className="grid grid-cols-2 gap-2 text-sm">
             {(
-              ["topLeft", "topRight", "bottomRight", "bottomLeft"] as const
+              ["topLeft", "topRight", "bottomLeft", "bottomRight"] as const
             ).map((corner) => (
-              <label key={corner} className="flex flex-col">
-                {corner.replace(/([A-Z])/g, " $1")}
+              <label key={corner} className="relative">
+                <Icons.Corner
+                  className={cn(
+                    "text-muted-foreground/70 absolute top-1/2 left-2 size-4 -translate-y-1/2 p-0.5",
+                    IconRotation[corner]
+                  )}
+                />
                 <DraggableInput
                   value={value[corner]}
                   onChange={(newVal) =>
                     onChange({ ...value, [corner]: newVal })
                   }
-                  className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 text-base"
+                  className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 pl-8 text-base"
                 />
               </label>
             ))}

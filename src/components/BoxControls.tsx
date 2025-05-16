@@ -1,4 +1,3 @@
-import { useRef } from "react"
 import BorderRadiusControl from "./BorderRadiusControl"
 import DraggableInput from "./DraggableInput"
 
@@ -33,6 +32,7 @@ interface BoxControlsProps {
 export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
   return (
     <div className="flex w-64 flex-col gap-4">
+      <h3 className="text-lg font-bold">Box Properties</h3>
       <BorderRadiusControl
         value={styles.borderRadius}
         onChange={(newRadius) =>
@@ -41,7 +41,9 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
       />
       <div className="text-muted-foreground flex items-center justify-between gap-10 text-sm">
         <label className="flex flex-1/2 flex-col gap-1">
-          Width (px)
+          <span className="text-foreground text-sm font-medium">
+            Width (px)
+          </span>
           <DraggableInput
             max={1000}
             value={styles.width}
@@ -51,7 +53,9 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
         </label>
 
         <label className="flex flex-1/2 flex-col gap-1">
-          Height (px)
+          <span className="text-foreground text-sm font-medium">
+            Height (px)
+          </span>
           <DraggableInput
             max={1000}
             value={styles.height}
@@ -62,7 +66,7 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
       </div>
       <div className="flex items-center justify-between gap-10 text-sm">
         <label className="flex w-full flex-col">
-          Bg Color
+          <span className="text-foreground text-sm font-medium">Bg Color</span>
           <input
             type="color"
             value={styles.backgroundColor}
@@ -72,7 +76,9 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
           />
         </label>
         <label className="flex w-full flex-col">
-          Canvas Color
+          <span className="text-foreground text-sm font-medium">
+            Canvas Color
+          </span>
           <input
             type="color"
             value={styles.canvasColor}

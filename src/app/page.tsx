@@ -6,8 +6,8 @@ import { useState } from "react"
 
 export default function Home() {
   const [boxStyles, setBoxStyles] = useState({
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
     backgroundColor: "#ffffff",
     borderRadius: {
       topLeft: 8,

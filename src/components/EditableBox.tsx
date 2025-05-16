@@ -11,13 +11,19 @@ interface EditableBoxProps {
     width: number
     height: number
     backgroundColor: string
-    shadow: Shadow
+    shadows: Shadow[]
   }
   classname?: string
 }
 
 export default function EditableBox({ styles }: EditableBoxProps) {
-  const boxShadow = `${styles.shadow.offsetX}px ${styles.shadow.offsetY}px ${styles.shadow.blur}px ${styles.shadow.spread}px ${styles.shadow.color}`
+  const boxShadow = styles.shadows
+    .map(
+      (s) =>
+        `${s.offsetX}px ${s.offsetY}px ${s.blur}px ${s.spread}px ${s.color}`
+    )
+    .join(", ")
+
   return (
     <div
       style={{

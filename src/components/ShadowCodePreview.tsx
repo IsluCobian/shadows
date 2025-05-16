@@ -17,12 +17,12 @@ export default function ShadowCodePreview({ shadows }: Props) {
   const tailwind = shadows
     .map(
       (s, i) =>
-        `[box-shadow:${s.offsetX}px_${s.offsetY}px_${s.blur}px_${s.spread}px_${s.color.replace(
+        `${s.offsetX}px_${s.offsetY}px_${s.blur}px_${s.spread}px_${s.color.replace(
           "#",
           ""
-        )}]`
+        )}`
     )
-    .join(" ")
+    .join(",")
 
   const copy = async (text: string) => {
     await navigator.clipboard.writeText(text)
@@ -46,9 +46,11 @@ export default function ShadowCodePreview({ shadows }: Props) {
       </div>
 
       <div>
-        <label className="text-muted-foreground mb-1 text-xs">Tailwind</label>
-        <div className="bg-background relative flex flex-wrap rounded border p-2 font-mono text-xs">
-          <code>{tailwind}</code>
+        <label className="text-muted-foreground mb-1 text-xs">
+          Tailwindcss
+        </label>
+        <div className="bg-background relative flex overflow-clip rounded border p-2 font-mono text-xs">
+          <code>[box-shadow:{tailwind}]</code>
           <button
             onClick={() => copy(tailwind)}
             className="text-muted-foreground hover:text-foreground absolute top-2 right-2"

@@ -30,13 +30,13 @@ export default function Home() {
     >
       <Header />
       <div className="flex w-full flex-col items-center justify-center md:flex-row">
-        <div className="flex min-h-screen flex-1 items-center justify-center md:min-h-auto">
+        <div className="sticky top-0 z-0 flex min-h-screen flex-1 items-center justify-center md:min-h-auto">
           <EditableBox styles={{ ...boxStyles, shadows }} />
         </div>
-        <div className="bg-card scrollbar-gutter relative flex w-full flex-col items-start justify-start space-y-5 overflow-y-auto p-6 md:absolute md:inset-y-0 md:left-0 md:mt-14 md:w-64 md:border-r md:p-3 md:px-4 md:pt-0 lg:w-80">
+        <div className="bg-card scrollbar-gutter relative z-10 flex w-full flex-col items-start justify-start space-y-5 overflow-y-auto border-t p-6 md:absolute md:inset-y-0 md:left-0 md:mt-16 md:w-64 md:border-t-0 md:border-r md:p-3 md:px-4 md:pt-0 lg:w-80">
           <ShadowSection shadows={shadows} onChange={setShadows} />
         </div>
-        <div className="bg-card flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:inset-y-0 md:right-0 md:mt-14 md:w-64 md:border-l md:p-3 md:px-4">
+        <div className="bg-card z-10 flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:inset-y-0 md:right-0 md:mt-16 md:w-64 md:border-l md:p-3 md:px-4">
           <BoxControls styles={boxStyles} setStyles={setBoxStyles} />
           <ShadowCodePreview shadows={shadows} />
         </div>

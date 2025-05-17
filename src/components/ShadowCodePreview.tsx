@@ -52,7 +52,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
           Tailwindcss
         </label>
         <div className="bg-background relative flex overflow-clip rounded border p-2 font-mono text-xs">
-          <code>[box-shadow:{tailwind}]</code>
+          <code>shadow-[{tailwind}]</code>
           <button
             onClick={() => copy(tailwind)}
             className="text-muted-foreground hover:text-foreground absolute top-2 right-2"

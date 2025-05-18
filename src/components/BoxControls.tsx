@@ -70,6 +70,7 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
           <span className="text-foreground text-sm font-medium">Bg Color</span>
           <input
             type="color"
+            className="h-8 w-full cursor-pointer rounded-md"
             value={styles.backgroundColor}
             onChange={(e) =>
               setStyles((s) => ({ ...s, backgroundColor: e.target.value }))
@@ -82,6 +83,7 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
           </span>
           <input
             type="color"
+            className="h-8 w-full cursor-pointer rounded-md"
             value={styles.canvasColor}
             onChange={(e) =>
               setStyles((s) => ({ ...s, canvasColor: e.target.value }))

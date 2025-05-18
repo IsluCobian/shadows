@@ -1,6 +1,7 @@
 import React from "react"
 import { Copy } from "lucide-react"
 import { Shadow } from "./ShadowControls"
+import { toast } from "sonner"
 
 type Props = {
   shadows: Shadow[]
@@ -27,7 +28,12 @@ export default function ShadowCodePreview({ shadows }: Props) {
     .join(",")
 
   const copy = async (text: string) => {
-    await navigator.clipboard.writeText(text)
+    try {
+      await navigator.clipboard.writeText(text)
+      toast("Copied to clipboard")
+    } catch (error) {
+      toast.error("Failed to copy")
+    }
   }
 
   return (
@@ -39,7 +45,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
           <code className="">box-shadow: {css};</code>
           <button
             onClick={() => copy(`box-shadow: ${css};`)}
-            className="text-muted-foreground hover:text-foreground absolute top-2 right-2"
+            className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
             title="Copy CSS"
           >
             <Copy className="size-4" />
@@ -55,7 +61,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
           <code>shadow-[{tailwind}]</code>
           <button
             onClick={() => copy(tailwind)}
-            className="text-muted-foreground hover:text-foreground absolute top-2 right-2"
+            className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
             title="Copy Tailwind"
           >
             <Copy className="size-4" />

@@ -16,9 +16,21 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Shadow Generator | Luis Cobian",
+  title: "BoxShadow Studio",
   description:
-    "Easily build and preview custom shadow boxes. Play with layers, lighting, and style to get the perfect look.",
+    "Easily build and preview custom shadow boxes. Play with layers, colors, and style to get the perfect look.",
+  keywords: [
+    "box shadow",
+    "css shadows",
+    "tailwind shadows",
+    "shadow editor",
+    "ui tool",
+    "tailwind box shadow generator",
+    "visual shadow editor",
+    "design shadows",
+    "generate box shadows",
+  ],
+  authors: [{ name: "Luis Cobian", url: "https://cobian.dev" }],
 }
 
 export default function RootLayout({

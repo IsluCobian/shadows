@@ -47,7 +47,7 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
       <div className="flex items-center justify-between">
         <label className="text-sm font-medium">Border Radius</label>
         <button
-          className="text-xs text-blue-400 underline"
+          className="text-xs text-violet-400 underline"
           onClick={() => setExpanded(!expanded)}
         >
           {expanded ? "Collapse" : "Edit Corners"}

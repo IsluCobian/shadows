@@ -20,7 +20,7 @@ export default function ToggleButton({
     <button
       type="button"
       className={cn(
-        "hover:bg-muted inline-flex cursor-pointer items-center rounded-lg px-2 py-1 text-sm transition-colors duration-200 ease-in-out data-[state=on]:bg-blue-200 data-[state=on]:text-blue-400 [&_svg]:mr-1 [&_svg]:size-4",
+        "hover:bg-muted inline-flex cursor-pointer items-center rounded-lg px-2 py-1 text-sm transition-colors duration-200 ease-in-out data-[state=on]:bg-violet-200 data-[state=on]:text-violet-500 [&_svg]:mr-1 [&_svg]:size-4",
         className
       )}
       onClick={toggle}

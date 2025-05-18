@@ -37,7 +37,7 @@ export default function ColorControl({ value, onChange }: Props) {
       <Popover>
         <div className="flex w-full gap-2">
           <PopoverTrigger asChild>
-            <div className="relative h-10 flex-1 rounded border">
+            <div className="relative h-10 flex-1 cursor-pointer rounded-md border">
               <div
                 className="absolute inset-0 rounded"
                 style={{
@@ -56,7 +56,7 @@ export default function ColorControl({ value, onChange }: Props) {
           <button
             onClick={pickColor}
             title="Pick a color"
-            className="hover:bg-muted flex size-10 items-center justify-center rounded border"
+            className="hover:bg-muted flex size-10 cursor-pointer items-center justify-center rounded-md border"
           >
             <Pipette className="size-4.5" />
           </button>

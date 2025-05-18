@@ -62,7 +62,7 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
               e.stopPropagation()
               update("visible", !value.visible)
             }}
-            className="hover:bg-muted flex items-center justify-center rounded-full p-2 [&_svg]:size-4"
+            className="hover:bg-muted flex cursor-pointer items-center justify-center rounded-full p-2 [&_svg]:size-4"
           >
             {value.visible === false ? <EyeOff /> : <Eye />}
           </button>

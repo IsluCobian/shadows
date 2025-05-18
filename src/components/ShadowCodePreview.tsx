@@ -31,7 +31,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
     try {
       await navigator.clipboard.writeText(text)
       toast("Copied to clipboard")
-    } catch (error) {
+    } catch {
       toast.error("Failed to copy")
     }
   }

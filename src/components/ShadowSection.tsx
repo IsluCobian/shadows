@@ -1,3 +1,4 @@
+import LayerReorderMenu from "./LayerReorderMenu"
 import ShadowControl, { Shadow } from "./ShadowControls"
 
 interface ShadowSectionProps {
@@ -17,7 +18,7 @@ export default function ShadowSection({
         offsetY: 4,
         blur: 10,
         spread: 0,
-        color: "#00000088",
+        color: "rgba(0,0,0,0.40)",
       },
     ])
   }
@@ -45,13 +46,25 @@ export default function ShadowSection({
       </div>
       <div className="flex flex-col gap-3">
         {shadows.map((shadow, i) => (
-          <div key={i} className="relative rounded-md border p-4">
-            <ShadowControl
-              value={shadow}
-              onChange={(v) => updateShadow(i, v)}
-              onDelete={() => removeShadow(i)}
-            />
-          </div>
+          <LayerReorderMenu
+            key={i}
+            index={i}
+            total={shadows.length}
+            onMove={(from, to) => {
+              const updated = [...shadows]
+              const [moved] = updated.splice(from, 1)
+              updated.splice(to, 0, moved)
+              onChange(updated)
+            }}
+          >
+            <div className="relative rounded-md border p-4">
+              <ShadowControl
+                value={shadow}
+                onChange={(v) => updateShadow(i, v)}
+                onDelete={() => removeShadow(i)}
+              />
+            </div>
+          </LayerReorderMenu>
         ))}
       </div>
     </div>

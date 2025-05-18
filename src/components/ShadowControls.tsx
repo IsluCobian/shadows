@@ -9,6 +9,7 @@ import {
 import { useState } from "react"
 import DraggableInput from "./DraggableInput"
 import ToggleButton from "./ToggleButton"
+import ColorControl from "./ColorControl"
 
 export type Shadow = {
   offsetX: number
@@ -18,6 +19,7 @@ export type Shadow = {
   color: string
   visible?: boolean
   inset?: boolean
+  name?: string
 }
 
 type Props = {
@@ -28,7 +30,6 @@ type Props = {
 
 export default function ShadowControl({ value, onChange, onDelete }: Props) {
   const [collapsed, setCollapsed] = useState(false)
-  const [shadowName, setShadowName] = useState("Box Shadow")
 
   const update = (key: keyof Shadow, val: number | string | boolean) => {
     onChange({ ...value, [key]: val })
@@ -67,8 +68,8 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
           </button>
           <label className="group relative w-[70%] text-sm font-medium">
             <input
-              value={shadowName}
-              onChange={(e) => setShadowName(e.target.value)}
+              value={value.name || "Box Shadow"}
+              onChange={(e) => update("name", e.target.value)}
               onClick={(e) => e.stopPropagation()}
               className="peer w-full rounded-md px-2 py-1"
             />
@@ -149,29 +150,11 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-sm">
-            <span>Color</span>
-            <div className="flex items-center gap-4">
-              <input
-                type="color"
-                value={value.color}
-                onChange={(e) => update("color", e.target.value)}
-                className="h-10 w-16 cursor-pointer rounded border"
-              />
-
-              <div className="flex flex-col">
-                <span className="text-muted-foreground text-xs">Opacity</span>
-                <DraggableInput
-                  value={getAlpha(value.color)}
-                  onChange={(alpha) =>
-                    update("color", setAlpha(value.color, alpha))
-                  }
-                  min={0}
-                  max={100}
-                  className="w-24 rounded-md border px-2 py-1"
-                />
-              </div>
-            </div>
+          <div className="mt-4">
+            <ColorControl
+              value={value.color}
+              onChange={(color) => update("color", color)}
+            />
           </div>
         </div>
       </div>

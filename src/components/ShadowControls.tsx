@@ -35,21 +35,6 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
     onChange({ ...value, [key]: val })
   }
 
-  function getAlpha(hex: string): number {
-    if (hex.length === 9) {
-      return Math.round((parseInt(hex.slice(7, 9), 16) / 255) * 100)
-    }
-    return 100
-  }
-
-  function setAlpha(hex: string, alpha: number): string {
-    const a = Math.round((alpha / 100) * 255)
-      .toString(16)
-      .padStart(2, "0")
-    if (hex.length === 9) return hex.slice(0, 7) + a
-    return hex + a
-  }
-
   return (
     <div className="flex flex-col">
       <div

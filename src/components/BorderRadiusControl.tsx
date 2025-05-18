@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react"
-import DraggableInput from "./DraggableInput"
-import { Scan } from "lucide-react"
-import { Icons } from "./Icons"
 import { cn } from "@/lib/utils"
+import { Scan } from "lucide-react"
+import { useState } from "react"
+import DraggableInput from "./DraggableInput"
+import { Icons } from "./Icons"
 
 type Radius = {
   topLeft: number

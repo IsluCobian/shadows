@@ -47,15 +47,15 @@ export default function DraggableInput({
 
     const handleEnd = () => {
       dragStartX.current = null
-      window.removeEventListener("mousemove", handleMove as any)
+      window.removeEventListener("mousemove", handleMove)
       window.removeEventListener("mouseup", handleEnd)
-      window.removeEventListener("touchmove", handleMove as any)
+      window.removeEventListener("touchmove", handleMove)
       window.removeEventListener("touchend", handleEnd)
     }
 
-    window.addEventListener("mousemove", handleMove as any)
+    window.addEventListener("mousemove", handleMove)
     window.addEventListener("mouseup", handleEnd)
-    window.addEventListener("touchmove", handleMove as any)
+    window.addEventListener("touchmove", handleMove)
     window.addEventListener("touchend", handleEnd)
   }
 

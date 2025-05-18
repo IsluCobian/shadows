@@ -8,6 +8,16 @@ type Props = {
   onChange: (val: string) => void
 }
 
+interface EyeDropper {
+  open(): Promise<{ sRGBHex: string }>
+}
+
+interface Window {
+  EyeDropper: {
+    new (): EyeDropper
+  }
+}
+
 export default function ColorControl({ value, onChange }: Props) {
   const pickColor = useCallback(async () => {
     // Check for browser support
@@ -17,7 +27,7 @@ export default function ColorControl({ value, onChange }: Props) {
     }
 
     try {
-      const eyeDropper = new (window as any).EyeDropper()
+      const eyeDropper = new (window as Window).EyeDropper()
       const result = await eyeDropper.open()
       const hex = result.sRGBHex
 

@@ -1,16 +1,10 @@
-import {
-  MoreVertical,
-  ArrowDown,
-  ArrowUp,
-  ChevronsUp,
-  ChevronsDown,
-} from "lucide-react"
+import { ContextMenuTrigger } from "@radix-ui/react-context-menu"
+import { ArrowDown, ArrowUp, ChevronsDown, ChevronsUp } from "lucide-react"
 import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
 } from "./ui/context-menu"
-import { ContextMenuTrigger } from "@radix-ui/react-context-menu"
 
 type Props = {
   index: number

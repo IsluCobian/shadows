@@ -20,7 +20,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
     .map(
       (s, i) =>
         `${s.offsetX}px_${s.offsetY}px_${s.blur}px_${s.spread}px_${s.color.replace(
-          "#",
+          /\s+/g,
           ""
         )}`
     )

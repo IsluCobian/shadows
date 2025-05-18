@@ -18,11 +18,18 @@ export default function Home() {
       bottomRight: 8,
       bottomLeft: 8,
     },
-    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
     canvasColor: "var(--muted)",
   })
 
-  const [shadows, setShadows] = useState<Shadow[]>([])
+  const [shadows, setShadows] = useState<Shadow[]>([
+    {
+      offsetX: 0,
+      offsetY: 4,
+      blur: 10,
+      spread: 0,
+      color: "rgba(0,0,0,0.40)",
+    },
+  ])
   return (
     <div
       className="bg-muted flex min-h-dvh w-full"

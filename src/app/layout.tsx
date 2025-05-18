@@ -4,6 +4,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/ThemeProvider"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { Toaster } from "sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,6 +57,7 @@ export default function RootLayout({
           <div className="fixed right-4 bottom-4 z-40 flex flex-col items-end gap-2">
             <ThemeToggle />
           </div>
+          <Analytics />
           <Toaster />
         </ThemeProvider>
       </body>

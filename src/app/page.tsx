@@ -5,6 +5,7 @@ import Header from "@/components/Header"
 import ShadowCodePreview from "@/components/ShadowCodePreview"
 import { Shadow } from "@/components/ShadowControls"
 import ShadowSection from "@/components/ShadowSection"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Home() {
@@ -46,6 +47,15 @@ export default function Home() {
         <div className="bg-card z-10 flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:inset-y-0 md:right-0 md:mt-16 md:w-64 md:border-l md:p-3 md:px-4">
           <BoxControls styles={boxStyles} setStyles={setBoxStyles} />
           <ShadowCodePreview shadows={shadows} />
+        </div>
+        <div className="bg-card z-10 flex w-full justify-center pb-6 md:absolute md:bottom-2 md:left-1/2 md:w-auto md:-translate-x-1/2 md:bg-transparent md:p-0">
+          <Link
+            href="https://x.com/CobianOG"
+            target="_blank"
+            className="bg-primary/20 text-primary hover:bg-primary/30 rounded-full px-4 py-1 font-medium transition-colors duration-200"
+          >
+            @CobianOG
+          </Link>
         </div>
       </div>
     </div>

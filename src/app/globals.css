@@ -51,7 +51,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(60.6% 0.25 292.717);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -85,7 +85,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(60.6% 0.25 292.717);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -142,4 +142,30 @@
 
 .scrollbar-gutter {
   scrollbar-gutter: stable;
+}
+.colorPicker .react-colorful {
+  border-radius: 12px;
+  width: 100%;
+}
+
+.colorPicker .react-colorful__saturation {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.colorPicker .react-colorful__hue,
+.colorPicker .react-colorful__alpha {
+  height: 14px;
+  border-radius: 5px;
+}
+
+.colorPicker .react-colorful__hue-pointer,
+.colorPicker .react-colorful__alpha-pointer {
+  width: 20px;
+  height: 20px;
+}
+
+.colorPicker .react-colorful__saturation-pointer {
+  width: 20px;
+  height: 20px;
 }

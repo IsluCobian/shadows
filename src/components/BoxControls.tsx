@@ -1,4 +1,5 @@
 import BorderRadiusControl from "./BorderRadiusControl"
+import ColorInputPopover from "./ColorInputPopover"
 import DraggableInput from "./DraggableInput"
 
 interface BoxControlsProps {
@@ -67,26 +68,18 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
       <div className="flex items-center justify-between gap-10 text-sm">
         <label className="flex w-full flex-col">
           <span className="text-foreground text-sm font-medium">Bg Color</span>
-          <input
-            type="color"
-            className="h-8 w-full cursor-pointer rounded-md"
+          <ColorInputPopover
             value={styles.backgroundColor}
-            onChange={(e) =>
-              setStyles((s) => ({ ...s, backgroundColor: e.target.value }))
-            }
+            onChange={(c) => setStyles((s) => ({ ...s, backgroundColor: c }))}
           />
         </label>
         <label className="flex w-full flex-col">
           <span className="text-foreground text-sm font-medium">
             Canvas Color
           </span>
-          <input
-            type="color"
-            className="h-8 w-full cursor-pointer rounded-md"
+          <ColorInputPopover
             value={styles.canvasColor}
-            onChange={(e) =>
-              setStyles((s) => ({ ...s, canvasColor: e.target.value }))
-            }
+            onChange={(c) => setStyles((s) => ({ ...s, canvasColor: c }))}
           />
         </label>
       </div>

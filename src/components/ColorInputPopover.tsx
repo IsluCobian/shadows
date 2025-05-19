@@ -4,6 +4,7 @@ import { useCallback } from "react"
 import { HexColorPicker, RgbaStringColorPicker } from "react-colorful"
 import { Input } from "./ui/input"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
+import { toast } from "sonner"
 
 type Props = {
   value: string
@@ -28,7 +29,7 @@ export default function ColorInputPopover({
 }: Props) {
   const pickColor = useCallback(async () => {
     if (!("EyeDropper" in window)) {
-      alert("Your browser doesn't support the EyeDropper API.")
+      toast.error("Your browser doesn't support the Eye Dropper")
       return
     }
 

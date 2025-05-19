@@ -41,15 +41,17 @@ export default function ShadowCodePreview({ shadows }: Props) {
       <h3 className="mb-2 text-sm font-medium">Generated Code</h3>
       <div className="mb-4">
         <label className="text-muted-foreground mb-1 text-xs">CSS</label>
-        <div className="bg-background relative flex max-h-24 flex-wrap overflow-y-auto rounded border p-2 font-mono text-xs">
-          <code className="">box-shadow: {css};</code>
-          <button
-            onClick={() => copy(`box-shadow: ${css};`)}
-            className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
-            title="Copy CSS"
-          >
-            <Copy className="size-4" />
-          </button>
+        <div className="relative">
+          <div className="bg-background flex max-h-24 flex-wrap overflow-y-auto rounded border p-2 font-mono text-xs">
+            <code className="">box-shadow: {css};</code>
+            <button
+              onClick={() => copy(`box-shadow: ${css};`)}
+              className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
+              title="Copy CSS"
+            >
+              <Copy className="size-4" />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -57,15 +59,17 @@ export default function ShadowCodePreview({ shadows }: Props) {
         <label className="text-muted-foreground mb-1 text-xs">
           Tailwindcss
         </label>
-        <div className="bg-background relative flex overflow-clip rounded border p-2 font-mono text-xs">
-          <code>shadow-[{tailwind}]</code>
-          <button
-            onClick={() => copy(tailwind)}
-            className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
-            title="Copy Tailwind"
-          >
-            <Copy className="size-4" />
-          </button>
+        <div className="relative">
+          <div className="bg-background flex overflow-x-auto rounded border p-2 font-mono text-xs text-nowrap">
+            <code>shadow-[{tailwind}]</code>
+            <button
+              onClick={() => copy(tailwind)}
+              className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
+              title="Copy Tailwind"
+            >
+              <Copy className="size-4" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

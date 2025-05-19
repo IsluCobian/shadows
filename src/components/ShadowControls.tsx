@@ -7,9 +7,9 @@ import {
   SquarePen,
 } from "lucide-react"
 import { useState } from "react"
+import ColorInputPopover from "./ColorInputPopover"
 import DraggableInput from "./DraggableInput"
 import ToggleButton from "./ToggleButton"
-import ColorControl from "./ColorControl"
 
 export type Shadow = {
   offsetX: number
@@ -136,9 +136,10 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
           </div>
 
           <div className="mt-4">
-            <ColorControl
+            <ColorInputPopover
               value={value.color}
               onChange={(color) => update("color", color)}
+              opacity
             />
           </div>
         </div>

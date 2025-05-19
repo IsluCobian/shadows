@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import type { InputHTMLAttributes } from "react"
+import { Input } from "./ui/input"
 
 type Props = {
   value: number
@@ -60,7 +61,7 @@ export default function DraggableInput({
   }
 
   return (
-    <input
+    <Input
       type="number"
       value={value}
       onChange={(e) => {

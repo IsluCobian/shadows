@@ -50,11 +50,10 @@ export default function ColorInputPopover({
       if (input.startsWith("rgba") || input.startsWith("rgb")) {
         onChange(input)
       }
-    } else {
-      let hex = input.replace(/[^0-9a-fA-F]/g, "")
-      if (hex.length > 6) hex = hex.slice(0, 6)
-      onChange(`#${hex}`)
     }
+    let hex = input.replace(/[^0-9a-fA-F]/g, "")
+    if (hex.length > 6) hex = hex.slice(0, 6)
+    onChange(`#${hex}`)
   }
 
   return (

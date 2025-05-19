@@ -62,7 +62,7 @@ export default function ColorInputPopover({
       <Popover>
         <div className="flex w-full">
           <PopoverTrigger asChild>
-            <div className="relative h-10 flex-1 cursor-pointer overflow-hidden rounded-md border">
+            <div className="relative h-9 flex-1 cursor-pointer overflow-hidden rounded-md border">
               {opacity && (
                 <div
                   className="absolute inset-0 rounded"

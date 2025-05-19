@@ -44,7 +44,7 @@ export default function ShadowSection({
           + Add Shadow
         </button>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="scrollbar-gutter -mr-3.5 flex max-h-[40vh] flex-col gap-3 overflow-y-auto pr-2 md:max-h-[70vh]">
         {shadows.map((shadow, i) => (
           <LayerReorderMenu
             key={i}

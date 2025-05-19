@@ -32,51 +32,45 @@ interface BoxControlsProps {
 }
 export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
   return (
-    <div className="flex flex-col gap-4">
-      <h3 className="text-lg font-bold">Box Properties</h3>
+    <div className="flex w-full flex-col gap-4">
+      <h3 className="text-lg font-semibold">Box Properties</h3>
       <BorderRadiusControl
         value={styles.borderRadius}
         onChange={(newRadius) =>
           setStyles((s) => ({ ...s, borderRadius: newRadius }))
         }
       />
-      <div className="text-muted-foreground flex items-center justify-between gap-10 text-sm">
+      <div className="flex w-full items-center justify-between gap-5 text-sm">
         <label className="flex flex-1/2 flex-col gap-1">
-          <span className="text-foreground text-sm font-medium">
-            Width (px)
-          </span>
+          <span className="font-medium">Width (px)</span>
           <DraggableInput
             max={1000}
             value={styles.width}
             onChange={(val) => setStyles((s) => ({ ...s, width: val }))}
-            className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 text-base"
+            className="w-full cursor-ew-resize rounded-md border px-2 py-1"
           />
         </label>
 
         <label className="flex flex-1/2 flex-col gap-1">
-          <span className="text-foreground text-sm font-medium">
-            Height (px)
-          </span>
+          <span className="font-medium">Height (px)</span>
           <DraggableInput
             max={1000}
             value={styles.height}
             onChange={(val) => setStyles((s) => ({ ...s, height: val }))}
-            className="text-foreground w-full cursor-ew-resize rounded-md border px-2 py-1 text-base"
+            className="w-full cursor-ew-resize rounded-md border px-2 py-1"
           />
         </label>
       </div>
-      <div className="flex items-center justify-between gap-10 text-sm">
-        <label className="flex w-full flex-col">
-          <span className="text-foreground text-sm font-medium">Bg Color</span>
+      <div className="flex w-full items-center justify-between gap-5 text-sm">
+        <label className="flex w-full flex-col gap-1">
+          <span className="font-medium">Bg Color</span>
           <ColorInputPopover
             value={styles.backgroundColor}
             onChange={(c) => setStyles((s) => ({ ...s, backgroundColor: c }))}
           />
         </label>
-        <label className="flex w-full flex-col">
-          <span className="text-foreground text-sm font-medium">
-            Canvas Color
-          </span>
+        <label className="flex w-full flex-col gap-1">
+          <span className="font-medium">Canvas Color</span>
           <ColorInputPopover
             value={styles.canvasColor}
             onChange={(c) => setStyles((s) => ({ ...s, canvasColor: c }))}

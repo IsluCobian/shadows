@@ -134,8 +134,8 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
               />
             </div>
           </div>
-
-          <div className="mt-4">
+          <div className="mt-4 flex flex-col text-sm">
+            <span>Color</span>
             <ColorInputPopover
               value={value.color}
               onChange={(color) => update("color", color)}

@@ -38,7 +38,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
 
   return (
     <div className="flex w-full flex-col">
-      <h3 className="mb-2 text-sm font-medium">Generated Code</h3>
+      <h3 className="text-lg font-medium">Generated Code</h3>
       <div className="mb-4">
         <label className="text-muted-foreground mb-1 text-xs">CSS</label>
         <div className="relative">

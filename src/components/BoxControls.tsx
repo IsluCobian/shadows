@@ -32,8 +32,8 @@ interface BoxControlsProps {
 }
 export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
   return (
-    <div className="flex w-full flex-col gap-4">
-      <h3 className="text-lg font-semibold">Box Properties</h3>
+    <div className="flex w-full flex-col gap-2">
+      <h3 className="mb-1 text-lg font-semibold">Box Properties</h3>
       <BorderRadiusControl
         value={styles.borderRadius}
         onChange={(newRadius) =>

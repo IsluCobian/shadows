@@ -44,9 +44,13 @@ export default function Home() {
         <div className="bg-card z-10 flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:top-0 md:left-0 md:m-3 md:w-72 md:rounded-xl md:border md:pt-0">
           <ShadowSection shadows={shadows} onChange={setShadows} />
         </div>
-        <div className="bg-card z-10 flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:top-0 md:right-0 md:m-3 md:w-64 md:rounded-xl md:border">
-          <BoxControls styles={boxStyles} setStyles={setBoxStyles} />
-          <ShadowCodePreview shadows={shadows} />
+        <div className="z-10 flex w-full flex-col items-start justify-start md:absolute md:top-0 md:right-0 md:m-3 md:w-64 md:space-y-5">
+          <div className="bg-card w-full p-6 md:rounded-xl md:border">
+            <BoxControls styles={boxStyles} setStyles={setBoxStyles} />
+          </div>
+          <div className="bg-card w-full p-6 md:rounded-xl md:border">
+            <ShadowCodePreview shadows={shadows} />
+          </div>
         </div>
         <div className="bg-card z-10 flex w-full justify-center pb-6 md:absolute md:bottom-2 md:left-1/2 md:w-auto md:-translate-x-1/2 md:bg-transparent md:p-0">
           <Link

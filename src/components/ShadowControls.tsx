@@ -10,6 +10,7 @@ import { useState } from "react"
 import ColorInputPopover from "./ColorInputPopover"
 import DraggableInput from "./DraggableInput"
 import ToggleButton from "./ToggleButton"
+import { Input } from "./ui/input"
 
 export type Shadow = {
   offsetX: number
@@ -52,11 +53,11 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
             {value.visible === false ? <EyeOff /> : <Eye />}
           </button>
           <label className="group relative w-[70%] text-sm font-medium">
-            <input
+            <Input
               value={value.name || "Box Shadow"}
               onChange={(e) => update("name", e.target.value)}
               onClick={(e) => e.stopPropagation()}
-              className="peer w-full rounded-md px-2 py-1"
+              className="peer h-auto w-full rounded-md border-none px-2 py-1 dark:bg-transparent"
             />
             <SquarePen className="text-muted-foreground absolute top-1/2 right-2 size-4 -translate-y-1/2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 peer-focus-visible:opacity-100" />
           </label>
@@ -69,10 +70,10 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
         />
       </div>
       <div
-        className="grid grid-rows-[0fr] overflow-hidden transition-all duration-400 ease-in-out data-open:grid-rows-[1fr]"
+        className="grid grid-rows-[0fr] overflow-hidden transition-all duration-500 ease-in-out data-open:grid-rows-[1fr]"
         data-open={collapsed ? "" : undefined}
       >
-        <div className="min-h-0">
+        <div className="min-h-0 px-0.5">
           <div className="flex w-full items-center justify-between py-1">
             <ToggleButton
               onToggle={() => {

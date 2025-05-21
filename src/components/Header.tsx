@@ -3,7 +3,7 @@ import { Icons } from "./Icons"
 
 export default function Header() {
   return (
-    <div className="bg-background fixed inset-x-0 top-0 z-0 m-3 flex items-center rounded-xl border p-4 md:left-1/2 md:w-72 md:-translate-x-1/2">
+    <div className="bg-background fixed inset-x-0 top-0 z-0 m-3 flex items-center rounded-xl border p-4 md:left-1/2 md:m-0 md:mt-3 md:w-72 md:-translate-x-1/2">
       <div className="flex w-full items-center justify-between">
         <div className="flex cursor-default items-center gap-1">
           <Icons.BoxStudio className="size-9" />

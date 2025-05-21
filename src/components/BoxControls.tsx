@@ -46,8 +46,8 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
       </section>
 
       <section className="grid grid-cols-2 gap-4">
-        <div className="space-y-1">
-          <label className="text-sm font-medium">Width (px)</label>
+        <div className="flex flex-col gap-1 text-sm">
+          <label className="text-muted-foreground text-xs">Width (px)</label>
           <DraggableInput
             max={1000}
             value={styles.width}
@@ -55,8 +55,8 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
             className="w-full cursor-ew-resize rounded-md border px-2 py-1"
           />
         </div>
-        <div className="space-y-1">
-          <label className="text-sm font-medium">Height (px)</label>
+        <div className="flex flex-col gap-1 text-sm">
+          <label className="text-muted-foreground text-xs">Height (px)</label>
           <DraggableInput
             max={1000}
             value={styles.height}
@@ -67,15 +67,15 @@ export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
       </section>
 
       <section className="grid grid-cols-2 gap-4">
-        <div className="space-y-1">
-          <label className="text-sm font-medium">Bg Color</label>
+        <div className="flex flex-col gap-1 text-sm">
+          <label className="text-muted-foreground text-xs">Bg Color</label>
           <ColorInputPopover
             value={styles.backgroundColor}
             onChange={(c) => setStyles((s) => ({ ...s, backgroundColor: c }))}
           />
         </div>
-        <div className="space-y-1">
-          <label className="text-sm font-medium">Canvas Color</label>
+        <div className="flex flex-col gap-1 text-sm">
+          <label className="text-muted-foreground text-xs">Canvas Color</label>
           <ColorInputPopover
             value={styles.canvasColor}
             onChange={(c) => setStyles((s) => ({ ...s, canvasColor: c }))}

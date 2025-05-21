@@ -57,7 +57,7 @@ export default function ShadowSection({
               onChange(updated)
             }}
           >
-            <div className="relative rounded-md border p-4">
+            <div className="relative rounded-md border p-2.5">
               <ShadowControl
                 value={shadow}
                 onChange={(v) => updateShadow(i, v)}

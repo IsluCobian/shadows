@@ -45,16 +45,16 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-medium">Border Radius</span>
+        <span className="text-muted-foreground text-xs">Border Radius</span>
         <button
-          className="text-xs text-violet-500 hover:underline"
+          className="hover:bg-muted cursor-pointer rounded-md px-2 py-1 text-xs text-violet-600 transition-colors dark:text-violet-400"
           onClick={() => setExpanded(!expanded)}
         >
           {expanded ? "Collapse" : "Edit Corners"}
         </button>
       </div>
 
-      <div className="relative mt-3">
+      <div className="relative mt-1">
         <Scan className="text-muted-foreground/70 absolute top-1/2 left-2 size-4 -translate-y-1/2" />
         <DraggableInput
           max={1000}

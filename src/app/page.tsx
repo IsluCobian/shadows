@@ -43,7 +43,7 @@ export default function Home() {
           <EditableBox styles={{ ...boxStyles, shadows }} />
           <ScrollAnimatedIcon className="absolute bottom-2 left-1/2 -translate-x-1/2 md:hidden" />
         </div>
-        <div className="bg-card z-10 flex w-full flex-col items-start justify-start rounded-t-xl border-t p-6 md:absolute md:top-0 md:left-0 md:m-3 md:w-72 md:rounded-xl md:border">
+        <div className="bg-card z-10 flex w-full flex-col items-start justify-start rounded-t-xl border-t p-6 md:absolute md:top-0 md:left-0 md:m-3 md:w-80 md:rounded-xl md:border">
           <ShadowSection shadows={shadows} onChange={setShadows} />
         </div>
         <div className="z-10 flex w-full flex-col items-start justify-start md:absolute md:top-0 md:right-0 md:m-3 md:w-64 md:space-y-3">
@@ -58,7 +58,7 @@ export default function Home() {
           <Link
             href="https://x.com/CobianOG"
             target="_blank"
-            className="bg-primary/20 text-primary hover:bg-primary/30 rounded-full px-4 py-1 font-medium transition-colors duration-200"
+            className="bg-primary/20 hover:bg-primary/30 rounded-full px-4 py-1 font-medium text-violet-700 transition-colors duration-200 dark:text-violet-300"
           >
             @CobianOG
           </Link>

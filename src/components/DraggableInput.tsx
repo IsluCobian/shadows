@@ -72,7 +72,7 @@ export default function DraggableInput({
       }}
       onMouseDown={handleDragStart}
       onTouchStart={handleDragStart}
-      className={`cursor-ew-resize touch-none ${className}`}
+      className={`h-8 cursor-ew-resize touch-none ${className}`}
       {...rest}
     />
   )

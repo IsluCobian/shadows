@@ -1,3 +1,4 @@
+import { Plus } from "lucide-react"
 import LayerReorderMenu from "./LayerReorderMenu"
 import ShadowControl, { Shadow } from "./ShadowControls"
 
@@ -36,12 +37,14 @@ export default function ShadowSection({
   return (
     <div className="flex w-full flex-col gap-4">
       <div className="bg-card sticky top-0 z-10 flex items-center justify-between">
-        <h3 className="text-lg leading-none font-semibold">Shadows</h3>
+        <h3 className="cursor-default text-lg leading-none font-semibold">
+          Shadows
+        </h3>
         <button
           onClick={addShadow}
-          className="hover:bg-muted rounded-md border px-3 py-1 text-sm font-medium transition"
+          className="hover:bg-muted inline-flex cursor-pointer items-center gap-2 rounded-md border px-3 py-1.5 pr-3.5 text-sm font-medium transition-colors [&_svg]:size-4"
         >
-          + Add Shadow
+          <Plus /> Add Shadow
         </button>
       </div>
       <div className="scrollbar-gutter -mr-3.5 flex max-h-[40vh] flex-col gap-3 overflow-y-auto pr-2 md:max-h-[70vh]">

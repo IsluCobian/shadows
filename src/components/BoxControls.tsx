@@ -30,53 +30,58 @@ interface BoxControlsProps {
     }>
   >
 }
+
 export default function BoxControls({ styles, setStyles }: BoxControlsProps) {
   return (
-    <div className="flex w-full flex-col gap-2">
-      <h3 className="mb-1 text-lg font-semibold">Box Properties</h3>
-      <BorderRadiusControl
-        value={styles.borderRadius}
-        onChange={(newRadius) =>
-          setStyles((s) => ({ ...s, borderRadius: newRadius }))
-        }
-      />
-      <div className="flex w-full items-center justify-between gap-5 text-sm">
-        <label className="flex flex-1/2 flex-col gap-1">
-          <span className="font-medium">Width (px)</span>
+    <div className="flex w-full flex-col gap-4">
+      <h3 className="text-lg leading-none font-semibold">Box Properties</h3>
+
+      <section>
+        <BorderRadiusControl
+          value={styles.borderRadius}
+          onChange={(newRadius) =>
+            setStyles((s) => ({ ...s, borderRadius: newRadius }))
+          }
+        />
+      </section>
+
+      <section className="grid grid-cols-2 gap-4">
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Width (px)</label>
           <DraggableInput
             max={1000}
             value={styles.width}
             onChange={(val) => setStyles((s) => ({ ...s, width: val }))}
             className="w-full cursor-ew-resize rounded-md border px-2 py-1"
           />
-        </label>
-
-        <label className="flex flex-1/2 flex-col gap-1">
-          <span className="font-medium">Height (px)</span>
+        </div>
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Height (px)</label>
           <DraggableInput
             max={1000}
             value={styles.height}
             onChange={(val) => setStyles((s) => ({ ...s, height: val }))}
             className="w-full cursor-ew-resize rounded-md border px-2 py-1"
           />
-        </label>
-      </div>
-      <div className="flex w-full items-center justify-between gap-5 text-sm">
-        <label className="flex w-full flex-col gap-1">
-          <span className="font-medium">Bg Color</span>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-2 gap-4">
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Bg Color</label>
           <ColorInputPopover
             value={styles.backgroundColor}
             onChange={(c) => setStyles((s) => ({ ...s, backgroundColor: c }))}
           />
-        </label>
-        <label className="flex w-full flex-col gap-1">
-          <span className="font-medium">Canvas Color</span>
+        </div>
+        <div className="space-y-1">
+          <label className="text-sm font-medium">Canvas Color</label>
           <ColorInputPopover
             value={styles.canvasColor}
             onChange={(c) => setStyles((s) => ({ ...s, canvasColor: c }))}
           />
-        </label>
-      </div>
+        </div>
+      </section>
     </div>
   )
 }

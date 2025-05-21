@@ -35,11 +35,11 @@ export default function ShadowSection({
   }
   return (
     <div className="flex w-full flex-col gap-4">
-      <div className="bg-card sticky top-0 z-10 flex items-center justify-between py-4">
-        <h3 className="text-lg font-bold">Shadows</h3>
+      <div className="bg-card sticky top-0 z-10 flex items-center justify-between">
+        <h3 className="text-lg leading-none font-semibold">Shadows</h3>
         <button
           onClick={addShadow}
-          className="self-start rounded-md border px-3 py-1 text-sm font-medium"
+          className="hover:bg-muted rounded-md border px-3 py-1 text-sm font-medium transition"
         >
           + Add Shadow
         </button>

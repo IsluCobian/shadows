@@ -37,10 +37,10 @@ export default function ShadowCodePreview({ shadows }: Props) {
   }
 
   return (
-    <div className="flex w-full flex-col">
-      <h3 className="text-lg font-medium">Generated Code</h3>
-      <div className="mb-4">
-        <label className="text-muted-foreground mb-1 text-xs">CSS</label>
+    <div className="flex w-full flex-col gap-4">
+      <h3 className="text-lg leading-none font-semibold">Generated Code</h3>
+      <div className="flex flex-col gap-1">
+        <label className="text-muted-foreground text-xs">CSS</label>
         <div className="relative">
           <div className="bg-background flex max-h-24 flex-wrap overflow-y-auto rounded border p-2 font-mono text-xs">
             <code className="">box-shadow: {css};</code>
@@ -55,10 +55,8 @@ export default function ShadowCodePreview({ shadows }: Props) {
         </div>
       </div>
 
-      <div>
-        <label className="text-muted-foreground mb-1 text-xs">
-          Tailwindcss
-        </label>
+      <div className="flex flex-col gap-1">
+        <label className="text-muted-foreground text-xs">Tailwindcss</label>
         <div className="relative">
           <div className="bg-background flex overflow-x-auto rounded border p-2 font-mono text-xs text-nowrap">
             <code>shadow-[{tailwind}]</code>

@@ -2,6 +2,7 @@
 import BoxControls from "@/components/BoxControls"
 import EditableBox from "@/components/EditableBox"
 import Header from "@/components/Header"
+import ScrollAnimatedIcon from "@/components/ScrollAnimatedIcon"
 import ShadowCodePreview from "@/components/ShadowCodePreview"
 import { Shadow } from "@/components/ShadowControls"
 import ShadowSection from "@/components/ShadowSection"
@@ -38,10 +39,11 @@ export default function Home() {
     >
       <Header />
       <div className="flex w-full flex-col items-center justify-center md:flex-row">
-        <div className="sticky top-0 z-0 flex min-h-screen flex-1 items-center justify-center md:min-h-auto">
+        <div className="sticky top-0 z-0 flex min-h-dvh flex-1 items-center justify-center md:min-h-auto">
           <EditableBox styles={{ ...boxStyles, shadows }} />
+          <ScrollAnimatedIcon className="absolute bottom-2 left-1/2 -translate-x-1/2 md:hidden" />
         </div>
-        <div className="bg-card z-10 flex w-full flex-col items-start justify-start space-y-5 p-6 md:absolute md:top-0 md:left-0 md:m-3 md:w-72 md:rounded-xl md:border md:pt-0">
+        <div className="bg-card z-10 flex w-full flex-col items-start justify-start space-y-5 rounded-t-xl border-t p-6 md:absolute md:top-0 md:left-0 md:m-3 md:w-72 md:rounded-xl md:border md:pt-0">
           <ShadowSection shadows={shadows} onChange={setShadows} />
         </div>
         <div className="z-10 flex w-full flex-col items-start justify-start md:absolute md:top-0 md:right-0 md:m-3 md:w-64 md:space-y-5">

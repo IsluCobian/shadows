@@ -43,7 +43,7 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col">
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium">Border Radius</span>
         <button
@@ -54,7 +54,7 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
         </button>
       </div>
 
-      <div className="relative">
+      <div className="relative mt-3">
         <Scan className="text-muted-foreground/70 absolute top-1/2 left-2 size-4 -translate-y-1/2" />
         <DraggableInput
           max={1000}
@@ -71,12 +71,12 @@ export default function BorderRadiusControl({ value, onChange }: Props) {
 
       <div
         className={cn(
-          "-m-2 grid grid-rows-[0fr] overflow-hidden p-2 transition-all duration-300 ease-in-out",
+          "grid grid-rows-[0fr] overflow-hidden transition-all duration-300 ease-in-out",
           expanded && "grid-rows-[1fr]"
         )}
       >
         <div className="min-h-0">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="mt-3 grid grid-cols-2 gap-3">
             {(
               ["topLeft", "topRight", "bottomLeft", "bottomRight"] as const
             ).map((corner) => (

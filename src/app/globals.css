@@ -188,3 +188,13 @@
   width: 20px;
   height: 20px;
 }
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}

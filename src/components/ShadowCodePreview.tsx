@@ -61,7 +61,7 @@ export default function ShadowCodePreview({ shadows }: Props) {
           <div className="bg-background flex overflow-x-auto rounded border p-2 font-mono text-xs text-nowrap">
             <code>shadow-[{tailwind}]</code>
             <button
-              onClick={() => copy(tailwind)}
+              onClick={() => copy(`shadow-[${tailwind}]`)}
               className="text-muted-foreground hover:text-foreground absolute top-2 right-2 cursor-pointer"
               title="Copy Tailwind"
             >

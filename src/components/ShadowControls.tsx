@@ -1,16 +1,9 @@
 import { cn } from "@/lib/utils"
-import {
-  ChevronRight,
-  Eye,
-  EyeOff,
-  SquareDashed,
-  SquarePen,
-  Trash2,
-} from "lucide-react"
+import { ChevronRight, Eye, EyeOff, SquarePen, Trash2 } from "lucide-react"
 import { useState } from "react"
 import ColorInputPopover from "./ColorInputPopover"
 import DraggableInput from "./DraggableInput"
-import ToggleButton from "./ToggleButton"
+import ShadowModeToggle from "./ShadowModeToggle"
 import { Input } from "./ui/input"
 
 export type Shadow = {
@@ -88,14 +81,11 @@ export default function ShadowControl({ value, onChange, onDelete }: Props) {
       >
         <div className="min-h-0">
           <div className="flex w-full items-center justify-between py-1">
-            <ToggleButton
+            <ShadowModeToggle
               onToggle={() => {
                 update("inset", !value.inset)
               }}
-            >
-              <SquareDashed />
-              Inset
-            </ToggleButton>
+            />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1 text-sm">
